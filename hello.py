@@ -1,8 +1,8 @@
 from flask import Flask, render_template, session, redirect, url_for
-from flask.ext.script import Manager
-from flask.ext.bootstrap import Bootstrap
-from flask.ext.moment import Moment
-from flask.ext.wtf import Form
+from flask_script import Manager
+from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from flask_wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required
 from da_location import location
