@@ -9,7 +9,7 @@ from da_location import location
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'some hard to guess string lol'
+#app.config['SECRET_KEY'] = 'some hard to guess string lol'
 
 manager = Manager(app)
 bootstrap = Bootstrap(app)
