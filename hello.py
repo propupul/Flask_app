@@ -10,6 +10,7 @@ from da_location import location
 
 app = Flask(__name__)
 #app.config['SECRET_KEY'] = 'some hard to guess string lol'
+app.config.from_pyfile('flaskapp.cfg')
 
 manager = Manager(app)
 bootstrap = Bootstrap(app)
