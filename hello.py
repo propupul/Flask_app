@@ -42,13 +42,7 @@ def index():
         if form.validate_on_submit():
             name = form.name.data
             prod_name = location(name)[0]
-            #location1 = location(name)[1:3]
-            #location2 = location(name)[2]
-            #location3 = location(name)[3]
-            #location4 =
             loc_name = location(name)[1] + '-' + location(name)[2] + '-' + location(name)[3]
-
-
             form.name.data = ""
 
     except:
