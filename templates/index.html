@@ -5,7 +5,8 @@
 
 {% block page_content %}
 <div class="page-header">
-    <h1>Location:  {% if name %}{{ name }}{% else %}Enter the correct SKU#{% endif %}</h1>
+    <h1>Product Name: {% if prod_name %}{{ prod_name }} <br>
+        Location: {{ loc_name }}{% else %}Enter the correct SKU#{% endif %}</h1>
 </div>
 {{ wtf.quick_form(form) }}
 {% endblock %}
