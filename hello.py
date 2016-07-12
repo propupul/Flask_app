@@ -33,20 +33,29 @@ def internal_server_error(e):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+
     form = NameForm()
-    name = form.name.data
-    
-    
+    prod_name = ""
+    loc_name = ""
+
     try:
-        da_locs = location(name)
+        if form.validate_on_submit():
+            name = form.name.data
+            prod_name = location(name)[0]
+            #location1 = location(name)[1:3]
+            #location2 = location(name)[2]
+            #location3 = location(name)[3]
+            #location4 =
+            loc_name = location(name)[1] + '-' + location(name)[2] + '-' + location(name)[3]
+
+
+            form.name.data = ""
+
     except:
-        da_locs = ""
-    #if form.validate_on_submit():
-        
-        #session['name'] = name
-        #return redirect(url_for('index'))
+        prod_name = ""
+        form.name.data = ""
     
-    return render_template('index.html', form=form, name=da_locs)#name=session.get('name'))
+    return render_template('index.html', form=form, prod_name=prod_name, loc_name=loc_name)
 
 
 if __name__ == '__main__':
